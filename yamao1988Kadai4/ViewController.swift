@@ -4,25 +4,23 @@ class ViewController: UIViewController {
 
     // ラベル
     @IBOutlet private var label: UILabel!
+
     override func viewDidLoad() {
+        super.viewDidLoad()
         label.text = "0"
     }
-    private var plus = 0
+
+    private var count = 0
+
     // ボタン＋１
     @IBAction func plusButton(_ sender: Any) {
-        self.pressplusButton()
+        count = count + 1
+        label.text = String(count)
     }
+
     // Clearボタン
     @IBAction func clearButton(_ sender: Any) {
-        self.pressclearButton()
-    }
-    
-    func pressplusButton() {
-      plus = plus + 1
-            label.text = String(plus)
-    }
-    func pressclearButton() {
-        plus = 0
-        label.text = "\(plus)"
+        count = 0
+        label.text = "\(count)"
     }
 }
